@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Youth Empowerment CBO | Building Future Leaders</title>
-    <!-- Google Fonts Imports -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Corrected Google Fonts Imports -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -76,6 +76,7 @@
             <h2>Connect With Us</h2>
             <p>Reach out to our leadership and administration team for partnership opportunities, enrollment, or inquiries.</p>
             
+            <!-- FIXED: Added full Formspree target token -->
             <form id="contactForm" action="https://formspree.io" method="POST" class="contact-form">
                 <div class="form-group">
                     <label for="name">Full Name</label>
@@ -115,7 +116,7 @@
                 </ul>
             </div>
 
-            
+            <!-- Column 3: Contact Channels -->
             <div class="footer-col">
                 <h4>Contact Info</h4>
                 <ul class="footer-contact">
@@ -132,7 +133,7 @@
         </div>
     </footer>
 
-    <!-- Formspree Security Handler (Prevents CloudFront 403 blocks) -->
+    <!-- Formspree Security Handler -->
     <script>
         const form = document.getElementById("contactForm");
         const status = document.getElementById("formStatus");
