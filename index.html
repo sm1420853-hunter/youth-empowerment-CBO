@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Youth Empowerment CBO - Nurturing the next generation of leaders in Kakuma, Kenya.">
     <title>Youth Empowerment CBO | Building Future Leaders</title>
-    <!-- Google Fonts Import -->
+    <!-- Google Fonts Imports -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
     <link href="https://googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -42,14 +42,17 @@
         <h2 class="section-title">Our Core Initiatives</h2>
         <div class="title-underline"></div>
         <div class="cards">
+            <!-- Card 1: Mentorship -->
             <div class="card">
                 <h3>🤝 Leadership & Mentorship</h3>
                 <p>Guiding youth through career pathing, personal leadership training, and professional development networks.</p>
             </div>
+            <!-- Card 2: ICT Club -->
             <div class="card">
                 <h3>🖥️ Digital Literacy & ICT</h3>
                 <p>Equipping young minds with technical computing capabilities, digital tools, and future-ready tech skills.</p>
             </div>
+            <!-- Card 3: Web Development -->
             <div class="card">
                 <h3>💻 Web Engineering</h3>
                 <p>Fostering critical logic and innovation through practical web application architecture and design projects.</p>
@@ -78,32 +81,38 @@
             <h2>Connect With Us</h2>
             <p class="connect-subtitle">Reach out to our leadership and administration team for partnership opportunities, enrollment, or inquiries.</p>
             
-            <form id="contactForm" action="https://formspree.io" method="POST" class="contact-form">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required placeholder="Enter your email address">
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required placeholder="How can we help you?"></textarea>
-                </div>
-                <button type="submit" id="submitBtn" class="submit-btn">Submit Inquiry</button>
-            </form>
-            <div id="formStatus" class="form-status"></div>
+            <div class="form-container">
+                <!-- FORM ENDPOINT WITH MATCHING COMPONENT LABELS -->
+                <form id="contactForm" action="https://formspree.io" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="How can we help you?"></textarea>
+                    </div>
+                    <button type="submit" id="submitBtn" class="submit-btn">Submit Inquiry</button>
+                </form>
+                <div id="formStatus" class="form-status" style="margin-top: 15px; font-weight: 600; text-align: center;"></div>
+            </div>
         </div>
     </section>
 
     <!-- MODERN FOOTER SECTION -->
     <footer class="main-footer">
         <div class="footer-container">
+            <!-- Column 1: Mission Summary -->
             <div class="footer-col">
                 <h3 class="footer-logo">Youth Empowerment CBO</h3>
                 <p class="footer-about">Transforming communities and nurturing the next generation of leaders through modern digital literacy, structured mentorship, and community-driven initiatives.</p>
             </div>
+
+            <!-- Column 2: Internal Navigation -->
             <div class="footer-col">
                 <h4>Quick Navigation</h4>
                 <ul class="footer-links">
@@ -113,15 +122,19 @@
                     <li><a href="#contact">Get In Touch</a></li>
                 </ul>
             </div>
+
+            <!-- Column 3: Contact Channels -->
             <div class="footer-col">
                 <h4>Contact Info</h4>
                 <ul class="footer-contact">
                     <li>📍 Kakuma, Kenya</li>
                     <li>📧 info@youthempowermentcbo.org</li>
-                    <li>📞 +254116156190</li>
+                    <li>📞 +254 116 156 190</li>
                 </ul>
             </div>
         </div>
+
+        <!-- Copyright Line -->
         <div class="footer-bottom">
             <p>&copy; 2026 Youth Empowerment CBO. All Rights Reserved. Empowering future communities.</p>
         </div>
