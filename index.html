@@ -3,51 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Youth Empowerment CBO - Nurturing the next generation of leaders in Kakuma, Kenya.">
     <title>Youth Empowerment CBO | Building Future Leaders</title>
-    <!-- Corrected Google Fonts Imports -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts Import -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Separate CSS Link -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- NAVIGATION HEADER -->
-    <nav class="navbar">
+    <header class="navbar" id="main-header">
         <div class="logo">Youth Empowerment CBO</div>
-        <ul class="nav-links">
-            <li><a href="#home" class="active">Home</a></li>
-            <li><a href="#services">Our Programs</a></li>
-            <li><a href="#donate">Donate</a></li>
-            <li><a href="#contact">Contact Us</a></li>
-            <li><a href="#donate" class="Donate-btn">Support Our Mission</a></li>
-        </ul>
-    </nav>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#" class="nav-link active" data-sec="home">Home</a></li>
+                <li><a href="#services" class="nav-link" data-sec="services">Our Programs</a></li>
+                <li><a href="#donate" class="nav-link" data-sec="donate">Donate</a></li>
+                <li><a href="#contact" class="nav-link" data-sec="contact">Contact Us</a></li>
+            </ul>
+        </nav>
+        <a href="#donate" class="Donate-btn">Support Our Mission</a>
+    </header>
 
     <!-- HERO SECTION -->
-    <section class="hero" id="home">
+    <main class="hero" id="home">
         <div class="hero-content">
             <h1>Empowering the Next Generation</h1>
             <p>Driven by purpose, guided by faith, and dedicated to transforming communities through sustainable skills development.</p>
             <a href="#contact" class="btn">Get Involved</a>
         </div>
-    </section>
+    </main>
 
     <!-- INITIATIVES SECTION -->
     <section class="content" id="services">
-        <h1>Our Core Initiatives</h1>
+        <h2 class="section-title">Our Core Initiatives</h2>
+        <div class="title-underline"></div>
         <div class="cards">
-            <!-- Card 1: Mentorship -->
             <div class="card">
                 <h3>🤝 Leadership & Mentorship</h3>
                 <p>Guiding youth through career pathing, personal leadership training, and professional development networks.</p>
             </div>
-            <!-- Card 2: ICT Club -->
             <div class="card">
                 <h3>🖥️ Digital Literacy & ICT</h3>
                 <p>Equipping young minds with technical computing capabilities, digital tools, and future-ready tech skills.</p>
             </div>
-            <!-- Card 3: Web Development -->
             <div class="card">
                 <h3>💻 Web Engineering</h3>
                 <p>Fostering critical logic and innovation through practical web application architecture and design projects.</p>
@@ -74,9 +76,8 @@
     <section class="contact-section" id="contact">
         <div class="contact-container">
             <h2>Connect With Us</h2>
-            <p>Reach out to our leadership and administration team for partnership opportunities, enrollment, or inquiries.</p>
+            <p class="connect-subtitle">Reach out to our leadership and administration team for partnership opportunities, enrollment, or inquiries.</p>
             
-            <!-- FIXED: Added full Formspree target token -->
             <form id="contactForm" action="https://formspree.io" method="POST" class="contact-form">
                 <div class="form-group">
                     <label for="name">Full Name</label>
@@ -99,78 +100,34 @@
     <!-- MODERN FOOTER SECTION -->
     <footer class="main-footer">
         <div class="footer-container">
-            <!-- Column 1: Mission Summary -->
             <div class="footer-col">
                 <h3 class="footer-logo">Youth Empowerment CBO</h3>
                 <p class="footer-about">Transforming communities and nurturing the next generation of leaders through modern digital literacy, structured mentorship, and community-driven initiatives.</p>
             </div>
-
-            <!-- Column 2: Internal Navigation -->
             <div class="footer-col">
                 <h4>Quick Navigation</h4>
                 <ul class="footer-links">
-                    <li><a href="#home">Home Banner</a></li>
+                    <li><a href="#">Home Banner</a></li>
                     <li><a href="#services">Our Programs</a></li>
                     <li><a href="#donate">Financial Support</a></li>
                     <li><a href="#contact">Get In Touch</a></li>
                 </ul>
             </div>
-
-            <!-- Column 3: Contact Channels -->
             <div class="footer-col">
                 <h4>Contact Info</h4>
                 <ul class="footer-contact">
                     <li>📍 Kakuma, Kenya</li>
                     <li>📧 info@youthempowermentcbo.org</li>
-                    <li>📞 +254 116 156 190</li>
+                    <li>📞 +254116156190</li>
                 </ul>
             </div>
         </div>
-
-        <!-- Copyright Line -->
         <div class="footer-bottom">
             <p>&copy; 2026 Youth Empowerment CBO. All Rights Reserved. Empowering future communities.</p>
         </div>
     </footer>
 
-    <!-- Formspree Security Handler -->
-    <script>
-        const form = document.getElementById("contactForm");
-        const status = document.getElementById("formStatus");
-        const submitBtn = document.getElementById("submitBtn");
-
-        form.addEventListener("submit", async function(event) {
-            event.preventDefault();
-            submitBtn.disabled = true;
-            submitBtn.innerText = "Sending...";
-            
-            const data = new FormData(event.target);
-            
-            try {
-                const response = await fetch(event.target.action, {
-                    method: form.method,
-                    body: data,
-                    headers: { 'Accept': 'application/json' }
-                });
-                
-                if (response.ok) {
-                    status.innerHTML = "Success! Your message was sent.";
-                    status.className = "form-status success";
-                    form.reset();
-                } else {
-                    const responseData = await response.json();
-                    status.innerHTML = responseData.errors ? responseData.errors.map(err => err.message).join(", ") : "Oops! There was a problem submitting your form.";
-                    status.className = "form-status error";
-                }
-            } catch (error) {
-                status.innerHTML = "Oops! There was a network connection error.";
-                status.className = "form-status error";
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.innerText = "Submit Inquiry";
-            }
-        });
-    </script>
-
+    <!-- Separate JavaScript Engine Link -->
+    <script src="script.js"></script>
 </body>
 </html>
