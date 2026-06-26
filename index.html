@@ -4,22 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Youth Empowerment CBO - Nurturing the next generation of leaders in Kakuma, Kenya.">
-    <title>Youth Empowerment CBO | Building Future Leaders</title>
+    <title>Youth Empowerment Initiatives CBO | Building Future Leaders</title>
+    
     <!-- Google Fonts Imports -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
     <link href="https://googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Separate CSS Link -->
+    
+    <!-- Connected CSS Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- NAVIGATION HEADER -->
     <header class="navbar" id="main-header">
-        <div class="logo">Youth Empowerment CBO</div>
+        <div class="logo">Youth Empowerment Initiatives CBO</div>
         <nav>
             <ul class="nav-links">
-                <li><a href="#" class="nav-link active" data-sec="home">Home</a></li>
+                <li><a href="#home" class="nav-link active" data-sec="home">Home</a></li>
                 <li><a href="#services" class="nav-link" data-sec="services">Our Programs</a></li>
                 <li><a href="#donate" class="nav-link" data-sec="donate">Donate</a></li>
                 <li><a href="#contact" class="nav-link" data-sec="contact">Contact Us</a></li>
@@ -28,119 +30,143 @@
         <a href="#donate" class="Donate-btn">Support Our Mission</a>
     </header>
 
-    <!-- HERO SECTION -->
-    <main class="hero" id="home">
-        <div class="hero-content">
-            <h1>Empowering the Next Generation</h1>
-            <p>Driven by purpose, guided by faith, and dedicated to transforming communities through sustainable skills development.</p>
-            <a href="#contact" class="btn">Get Involved</a>
-        </div>
+    <!-- MAIN BODY LAYOUT WRAPPER -->
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>Empowering the Next Generation</h1>
+                <p>Driven by purpose, guided by faith, and dedicated to transforming communities through sustainable skills development.</p>
+                <a href="#contact" class="btn">Get Involved</a>
+            </div>
+        </section>
+
+        <!-- INITIATIVES SECTION -->
+        <section class="content" id="services">
+            <h2 class="section-title">Our Core Initiatives</h2>
+            <div class="title-underline"></div>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-icon">🤝</div>
+                    <h3>Leadership & Mentorship</h3>
+                    <p>Guiding youth through career pathing, personal leadership training, and professional development networks.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🖥️</div>
+                    <h3>Digital Literacy & ICT</h3>
+                    <p>Equipping young minds with technical computing capabilities, digital tools, and future-ready tech skills.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💻</div>
+                    <h3>Web Engineering</h3>
+                    <p>Fostering critical logic and innovation through practical web application architecture and design projects.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINANCIAL SUPPORT SECTION -->
+        <section class="donate-section" id="donate">
+            <div class="donate-container">
+                <h2>Support Our Mission</h2>
+                <p class="donate-intro">Your financial support directly funds training materials, internet connectivity, and mentorship structures for our local youth.</p>
+                
+                <div class="donation-grid">
+                    <!-- Left Column: M-PESA Trigger Box -->
+                    <div class="donation-card payment-trigger-card">
+                        <h3>⚡ Instant M-PESA Online</h3>
+                        <p class="card-subtitle">Receive an instant secure STK PIN prompt directly on your Safaricom phone.</p>
+                        
+                        <form id="mpesaForm" class="mpesa-push-form">
+                            <div class="input-inline-group">
+                                <div class="field-item flex-2">
+                                    <label for="mpesaPhone">Safaricom Phone Number</label>
+                                    <input type="tel" id="mpesaPhone" required placeholder="e.g., 0712345678" pattern="^(?:254|\+254|0)?(7|1)\d{8}$">
+                                </div>
+                                <div class="field-item flex-1">
+                                    <label for="mpesaAmount">Amount (KES)</label>
+                                    <input type="number" id="mpesaAmount" required min="1" max="70000" placeholder="500">
+                                </div>
+                            </div>
+                            <button type="submit" id="mpesaSubmitBtn" class="mpesa-btn">Send Prompt to Phone</button>
+                        </form>
+                        <div id="mpesaStatus" class="mpesa-status-message"></div>
+                    </div>
+
+                    <!-- Right Column: Manual Backup Transfer Info -->
+                    <div class="donation-card transfer-box-card">
+                        <h3>Manual Mobile Transfer</h3>
+                        <p class="card-subtitle">Prefer sending manually? Use our direct line options below:</p>
+                        <div class="account-badge">
+                            <span class="badge-label">M-PESA Number</span>
+                            <p class="account-number">0116156190</p>
+                            <p class="account-name">Youth Empowerment CBO</p>
+                        </div>
+                        <p class="reference-note">Please include your full name as the transaction message/reference so we can properly register and acknowledge your support.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT FORM SECTION -->
+        <section class="contact-section" id="contact">
+            <div class="contact-container">
+                <h2>Connect With Us</h2>
+                <p class="connect-subtitle">Reach out to our leadership and administration team for partnership opportunities, enrollment, or inquiries.</p>
+                
+                <div class="form-container">
+                    <!-- Configured with a dedicated placeholder for automatic simulator routing -->
+                    <form id="contactForm" action="https://formspree.io" method="POST" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="How can we help you?"></textarea>
+                        </div>
+                        <button type="submit" id="submitBtn" class="submit-btn">Submit Inquiry</button>
+                    </form>
+                    <div id="formStatus" class="form-status"></div>
+                </div>
+            </div>
+        </section>
     </main>
-
-    <!-- INITIATIVES SECTION -->
-    <section class="content" id="services">
-        <h2 class="section-title">Our Core Initiatives</h2>
-        <div class="title-underline"></div>
-        <div class="cards">
-            <!-- Card 1: Mentorship -->
-            <div class="card">
-                <h3>🤝 Leadership & Mentorship</h3>
-                <p>Guiding youth through career pathing, personal leadership training, and professional development networks.</p>
-            </div>
-            <!-- Card 2: ICT Club -->
-            <div class="card">
-                <h3>🖥️ Digital Literacy & ICT</h3>
-                <p>Equipping young minds with technical computing capabilities, digital tools, and future-ready tech skills.</p>
-            </div>
-            <!-- Card 3: Web Development -->
-            <div class="card">
-                <h3>💻 Web Engineering</h3>
-                <p>Fostering critical logic and innovation through practical web application architecture and design projects.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FINANCIAL SUPPORT SECTION -->
-    <section class="donate-section" id="donate">
-        <div class="donate-container">
-            <h2>Support Our Mission</h2>
-            <p class="donate-intro">Your financial support directly funds training materials, internet connectivity, and mentorship structures for our local youth.</p>
-            
-            <div class="transfer-box">
-                <h3>Direct Mobile Transfer</h3>
-                <p class="account-number">0116156190</p>
-                <p class="account-name">Account Name: Youth Empowerment CBO</p>
-            </div>
-            <p class="reference-note">Please include your full name as the transaction message/reference so we can properly register and acknowledge your support.</p>
-        </div>
-    </section>
-
-    <!-- CONTACT FORM SECTION -->
-    <section class="contact-section" id="contact">
-        <div class="contact-container">
-            <h2>Connect With Us</h2>
-            <p class="connect-subtitle">Reach out to our leadership and administration team for partnership opportunities, enrollment, or inquiries.</p>
-            
-            <div class="form-container">
-                <!-- FORM ENDPOINT WITH MATCHING COMPONENT LABELS -->
-                <form id="contactForm" action="https://formspree.io" method="POST" class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required placeholder="Enter your full name">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required placeholder="Enter your email address">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required placeholder="How can we help you?"></textarea>
-                    </div>
-                    <button type="submit" id="submitBtn" class="submit-btn">Submit Inquiry</button>
-                </form>
-                <div id="formStatus" class="form-status" style="margin-top: 15px; font-weight: 600; text-align: center;"></div>
-            </div>
-        </div>
-    </section>
 
     <!-- MODERN FOOTER SECTION -->
     <footer class="main-footer">
         <div class="footer-container">
-            <!-- Column 1: Mission Summary -->
             <div class="footer-col">
-                <h3 class="footer-logo">Youth Empowerment CBO</h3>
+                <h3 class="footer-logo">Youth Empowerment Initiatives CBO</h3>
                 <p class="footer-about">Transforming communities and nurturing the next generation of leaders through modern digital literacy, structured mentorship, and community-driven initiatives.</p>
             </div>
-
-            <!-- Column 2: Internal Navigation -->
             <div class="footer-col">
                 <h4>Quick Navigation</h4>
                 <ul class="footer-links">
-                    <li><a href="#">Home Banner</a></li>
+                    <li><a href="#home">Home Banner</a></li>
                     <li><a href="#services">Our Programs</a></li>
                     <li><a href="#donate">Financial Support</a></li>
                     <li><a href="#contact">Get In Touch</a></li>
                 </ul>
             </div>
-
-            <!-- Column 3: Contact Channels -->
             <div class="footer-col">
                 <h4>Contact Info</h4>
                 <ul class="footer-contact">
                     <li>📍 Kakuma, Kenya</li>
                     <li>📧 info@youthempowermentcbo.org</li>
-                    <li>📞 +254 116 156 190</li>
+                    <li>📞 +254116156190</li>
                 </ul>
             </div>
         </div>
-
-        <!-- Copyright Line -->
         <div class="footer-bottom">
             <p>&copy; 2026 Youth Empowerment CBO. All Rights Reserved. Empowering future communities.</p>
         </div>
     </footer>
 
-    <!-- Separate JavaScript Engine Link -->
-    <script src="script.js"></script>
+    <!-- Native JavaScript File Linked via Defer -->
+    <script src="script.js" defer></script>
 </body>
 </html>
